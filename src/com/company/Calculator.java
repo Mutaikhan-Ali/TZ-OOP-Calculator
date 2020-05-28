@@ -186,14 +186,18 @@ public class Calculator  // отвечает за сборку компонен�
 
     public void input_fromTerminal() throws Exception {
         Scanner sc = new Scanner(System.in);
-        String n1 = sc.nextLine();
-        String sym = sc.nextLine();
-        String n2 = sc.nextLine();
+        String data = sc.nextLine();
+        String[]array = data.split(" ");
+        String number_1 = array[0];
+        String number_2 = array[2];
+        String symbol = array[1];
 
-        setNumber_type(determine_numberType(n1,n2));
-        number_type.set_values(n1,n2,sym);
+        setNumber_type(determine_numberType(number_1,number_2));
+        number_type.set_values(number_1,number_2,symbol);
         number_type.do_calculation();
         output_result();
+
+
     }
 
 
